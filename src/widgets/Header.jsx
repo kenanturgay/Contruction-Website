@@ -7,7 +7,7 @@ const Header = () => {
   const { language, toggleLanguage, t } = useLanguage();
 
   return (
-    <header className="sticky top-0 z-50 transition-all duration-500 bg-white/85 backdrop-blur-xl border-b border-stone-200/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+    <header className="sticky top-0 z-50 transition-all duration-500 bg-white/85 backdrop-blur-xl border-b border-stone-200/50 shadow-[0_8px_30px_rgb(23,23,23,0.04)]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex justify-between items-center h-28">
           <div className="flex-shrink-0">
