@@ -21,13 +21,80 @@
   .dark body {
     @apply bg-slate-950 text-slate-100;
   }
-  .dark header {
-    @apply bg-slate-900/85 border-slate-800;
-  }
 }
 
 
 @layer utilities {
+  .animate-gradient-x {
+    animation: gradient-x 8s ease infinite;
+    background-size: 200% 200%;
+  }
+  
+  @keyframes gradient-x {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .animate-fade-in-down {
+    animation: fadeInDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-shine {
+    position: relative;
+    overflow: hidden;
+  }
+  .animate-shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent);
+    animation: shine 5s infinite;
+    pointer-events: none;
+    transform: skewX(-20deg);
+  }
+
+  @keyframes shine {
+    0% {
+      left: -100%;
+    }
+    20%, 100% {
+      left: 200%;
+    }
+  }
+
   .animate-marquee {
     animation: marquee 25s linear infinite;
   }
